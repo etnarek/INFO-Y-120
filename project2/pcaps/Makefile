@@ -15,8 +15,9 @@ CFLAGS+=-e frame.len
 CFLAGS+=-e dns.resp.ttl 
 CFLAGS+=-e dns.cname 
 CFLAGS+=-e dns.a 
+CFLAGS+=-e dns.aaaa
 
 LDFLAGS=-E separator="," -E quote=d
 
 %.csv:%.pcap
-	$(CC) $(CFLAGS) $(LDFLAGS) -r $< > $@
+	time $(CC) $(CFLAGS) $(LDFLAGS) -r $< > $@
