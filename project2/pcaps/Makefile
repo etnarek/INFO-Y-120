@@ -16,8 +16,9 @@ CFLAGS+=-e dns.resp.ttl
 CFLAGS+=-e dns.cname 
 CFLAGS+=-e dns.a 
 CFLAGS+=-e dns.aaaa
+CFLAGS+=-e dns.txt
 
-LDFLAGS=-E separator="," -E quote=d
+LDFLAGS=-E separator="," -E quote=d -E header=y
 
 %.csv:%.pcap
 	time $(CC) $(CFLAGS) $(LDFLAGS) -r $< > $@
