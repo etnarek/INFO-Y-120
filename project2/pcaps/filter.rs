@@ -35,6 +35,9 @@ fn process(line: String, alexa: &HashSet<String>) {
         return;
     }
 
+    if s_trim.split(',').count() > 1{
+        return
+    }
     let max = s_trim.split('.').count() - 1;
     for i in 1..max {
         let ss: Vec<&str> = s_trim.splitn(i + 1, '.').collect();

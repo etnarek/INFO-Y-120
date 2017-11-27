@@ -19,7 +19,7 @@ CFLAGS+=-e dns.txt
 
 LDFLAGS=-E separator="/t" -E quote=d -E header=y
 
-FILTER=-Y "dns.flags.response == 1"
+FILTER=-Y "dns.flags.response == 1 && dns.qry.name.len > 0"
 
 %.csv:%.pcap
 	time $(CC) $(CFLAGS) $(FILTER) $(LDFLAGS) -r $< | ./filter > $@
