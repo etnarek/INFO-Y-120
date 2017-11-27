@@ -1,0 +1,3 @@
+[submodule "project2/facets"]
+	path = project2/facets
+	url = https://github.com/PAIR-code/facets
